@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gradecalculator.Views.CourseListPage"
+             xmlns:models="clr-namespace:gradecalculator.Models"
+             xmlns:vm="clr-namespace:gradecalculator.ViewModels"
+             xmlns:views="clr-namespace:gradecalculator.Views"
+             x:DataType="vm:CourseEntryViewModel"
+             Title="List of Courses Taken">
+    <ScrollView>
+        <VerticalStackLayout Margin="20" Spacing="25">
+            <ListView
+                x:Name="CourseListView"
+                ItemsSource="{Binding CourseEntries}"
+                SelectionMode="None"
+                ItemTapped="CourseListView_ItemTapped">
+                    <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:CourseEntry">
+                        <ViewCell>
+                            <HorizontalStackLayout Spacing="30">
+                                <Label
+                                        Text="{Binding courseName}"
+                                        FontAttributes="Bold" />
+                                <Label
+                                    Text="{Binding creditUnits}"/>
+                                <Label
+                                        Text="{Binding grade, StringFormat='Grade: {0}'}"
+                                        VerticalTextAlignment="End"/>
+                            </HorizontalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                    </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Add New Course"
+                    Clicked="AddBtnClicked"
+                    HorizontalOptions="Center" />
+            <Button Text="Calculate GPA"
+                    Clicked="CalcBtnClicked"
+                    HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

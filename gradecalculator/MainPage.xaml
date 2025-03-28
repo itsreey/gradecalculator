@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gradecalculator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="gpalogo.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="the GPA Calculator app logo" />
+
+            <Label
+                Text="Welcome to the UON GPA Calculator!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Welcome to the GPA calculator app." />
+
+            <Button
+                x:Name="StartBtn"
+                Text="Get Started"
+                HorizontalOptions="Fill"
+                Clicked="StartBtnClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

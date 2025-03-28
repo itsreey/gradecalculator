@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gradecalculator.AboutPage"
+             Title="About">
+    <VerticalStackLayout Spacing="10" Margin="10" Padding="5">
+        <HorizontalStackLayout Spacing="10">
+            <Image Source="gpalogo.png"
+                   SemanticProperties.Description="The GPA Calculator app logo"
+                   HeightRequest="64" />
+            <Label FontSize="22" FontAttributes="Bold" Text="GPA Calculator" VerticalOptions="End" />
+            <Label FontSize="22" Text="v1.0" VerticalOptions="End" />
+        </HorizontalStackLayout>
+
+        <Label Text="This GPA Calculator is meant for UON students' convenience. :)" />
+        <Label
+            Text="Through keeping track of your grades and overall GPA, you can manage your academic goals better."
+            Margin="0,0,0,10"/>
+        <Label Text="Created by Reena Yong (c3489301), Sarah Lee'na Binte Imran (c3489403), and Queenara Valerie Tan (c3489400)." />
+        <Label
+            Margin="0,10,0,0"
+            Text="Third-party packages used in this project include SQLite, SQLite-Net Extensions, and the Community MVVM Toolkit."/>
+    </VerticalStackLayout>
+</ContentPage>

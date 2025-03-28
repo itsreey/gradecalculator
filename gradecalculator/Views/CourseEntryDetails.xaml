@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gradecalculator.Views.CourseEntryDetails"
+             xmlns:models="clr-namespace:gradecalculator.Models"
+             x:DataType="models:CourseEntry"
+             Title="Course Details">
+
+    <ScrollView>
+    <VerticalStackLayout Margin="20" Spacing="10">
+        <Label 
+            Text="Please enter the course details below"
+            FontSize="Medium"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            Margin="0,0,0,25"/>
+
+        <Label Text="Name of the course taken:"/>
+        <Entry x:Name="courseEntryName" Text="{Binding courseName}" />
+
+        <Label Text="Amount of units the course is worth:"/>
+        <Label Text="Hint: It's usually 10" FontSize="Micro" />
+        <Picker
+            ItemsSource="{x:Static models:GradeValue.Units}"
+            SelectedItem="{Binding creditUnits}" />
+
+        <Label Text="Grade received:" />
+        <Picker
+            SelectedItem="{Binding grade}"
+            ItemsSource="{x:Static models:GradeValue.Grades}"/>
+
+            <Button Text="Save Entry"
+                    Clicked="SaveBtnClicked"/>
+        
+            <Button Text="Cancel"
+                    Clicked="CancelBtnClicked"/>
+
+            <Button Text="Delete this Entry"
+                Clicked="DeleteBtnClicked"/>
+        
+    </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
