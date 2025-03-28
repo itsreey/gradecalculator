@@ -37,7 +37,6 @@ public partial class CourseListPage : ContentPage
 
         DisplayAlert("Result", "Your GPA is " + calc.GetResult() + ".", "Done");
 
-        //TODO: add rounding to results
         //TODO: add special exception phrase when theres no courses yet. currently it says "Your GPA is NaN"
 
     }
