@@ -1,5 +1,6 @@
 ﻿// this is mostly for the picker in our course entry detail xaml file oops
-// the plan was to have this be what handles the converting letter grades into grade points (eg HD -> 7; D -> 6, etc) but uhhhhh im still working on that!
+// the plan was to have this be what handles the converting letter grades into grade points (eg HD -> 7; D -> 6, etc) but uhhhhh that ended up being in courseentry.cs
+// does this mean this is redundant?? should i remove this to make my code cleaner??? hmm
 
 using System;
 using System.Collections.Generic;

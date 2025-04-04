@@ -33,9 +33,10 @@ public partial class CourseListPage : ContentPage
     {
 
         List<CourseEntry> courseList = _entryViewModel.CourseEntries;
-        Calculator calc = new Calculator(courseList);
+        Calculator calc = new Calculator(courseList); // create a new calculator object to calculate
 
-        DisplayAlert("Result", "Your GPA is " + calc.GetResult() + ".", "Done");
+        HapticFeedback.Default.Perform(HapticFeedbackType.Click); // add haptic feedback for the results showing, for emphasis
+        DisplayAlert("Result", "Your GPA is " + calc.GetResult() + ".", "Done"); // the results display as a pop-up
 
         //TODO: add special exception phrase when theres no courses yet. currently it says "Your GPA is NaN"
 

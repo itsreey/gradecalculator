@@ -32,9 +32,14 @@
                     </ListView.ItemTemplate>
             </ListView>
             <Button Text="Add New Course"
+                    ImageSource="add.png"
+                    HeightRequest="45"
                     Clicked="AddBtnClicked"
                     HorizontalOptions="Center" />
+            
             <Button Text="Calculate GPA"
+                    ImageSource="calculator.png"
+                    HeightRequest="45"
                     Clicked="CalcBtnClicked"
                     HorizontalOptions="Center" />
         </VerticalStackLayout>
