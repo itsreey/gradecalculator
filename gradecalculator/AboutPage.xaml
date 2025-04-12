@@ -5,7 +5,7 @@
              Title="About">
     <VerticalStackLayout Spacing="10" Margin="10" Padding="5">
         <HorizontalStackLayout Spacing="10">
-            <Image Source="gpalogo.png"
+            <Image Source="calclogo.png"
                    SemanticProperties.Description="The GPA Calculator app logo"
                    HeightRequest="64" />
             <Label FontSize="22" FontAttributes="Bold" Text="GPA Calculator" VerticalOptions="End" />
@@ -20,5 +20,7 @@
         <Label
             Margin="0,10,0,0"
             Text="Third-party packages used in this project include SQLite, SQLite-Net Extensions, and the Community MVVM Toolkit."/>
+        <Label Text="App icon sourced from Flaticon, a repository of free icons and vectors by designers for designers." />
+
     </VerticalStackLayout>
 </ContentPage>

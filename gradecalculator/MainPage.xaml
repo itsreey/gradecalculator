@@ -8,7 +8,7 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="gpalogo.png"
+                Source="calclogo.png"
                 HeightRequest="185"
                 Aspect="AspectFit"
                 SemanticProperties.Description="the GPA Calculator app logo" />

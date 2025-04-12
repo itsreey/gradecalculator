@@ -30,17 +30,17 @@
             ItemsSource="{x:Static models:GradeValue.Grades}"/>
 
             <Button Text="Save Entry"
-                    ImageSource="save.png"
+                    ImageSource="{AppThemeBinding Light=savelight.png, Dark=save.png}"
                     HeightRequest="45"
                     Clicked="SaveBtnClicked"/>
         
             <Button Text="Cancel"
-                    ImageSource="cancel.png"
+                    ImageSource="{AppThemeBinding Light=cancellight.png, Dark=cancel.png}"
                     HeightRequest="45"
                     Clicked="CancelBtnClicked"/>
 
             <Button Text="Delete this Entry"
-                    ImageSource="trash.png"
+                    ImageSource="{AppThemeBinding Light=trashlight.png, Dark=trash.png}"
                     HeightRequest="45"
                     ContentLayout="Left, 20"
                     Clicked="DeleteBtnClicked"/>

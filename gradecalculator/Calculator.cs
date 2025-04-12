@@ -36,6 +36,7 @@ namespace gradecalculator
         public double GetResult()
         {
             gpa = totalgradevalue / totalunits;
+            // Add rounding
             var result = Math.Round(gpa, 2);
             return result;
         }

@@ -19,6 +19,11 @@
         Route="AboutPage" />
 
     <ShellContent
+        Title="Settings"
+        ContentTemplate="{DataTemplate local:SettingsPage}"
+        Route="SettingsPage" />
+
+    <ShellContent
         IsVisible="False"
         Title="List of Courses Saved"
         ContentTemplate="{DataTemplate views:CourseListPage}"

@@ -32,13 +32,13 @@
                     </ListView.ItemTemplate>
             </ListView>
             <Button Text="Add New Course"
-                    ImageSource="add.png"
+                    ImageSource="{AppThemeBinding Light=addlight.png, Dark=adddark.png}"
                     HeightRequest="45"
                     Clicked="AddBtnClicked"
                     HorizontalOptions="Center" />
             
             <Button Text="Calculate GPA"
-                    ImageSource="calculator.png"
+                    ImageSource="{AppThemeBinding Light=calculatorlight.png, Dark=calculatordark.png}"
                     HeightRequest="45"
                     Clicked="CalcBtnClicked"
                     HorizontalOptions="Center" />

@@ -16,7 +16,8 @@ public partial class CourseEntryDetails : ContentPage
 		InitializeComponent();
 	}
 
-	// strings work easiest for this but then we gotta convert the data from string to double, for both the units and grades, to be able to calculate
+	// strings work easiest for this because we can use IsNullOrEmpty to check, but then we must convert from string to double for the calculations
+	// that bit is handled in the CourseEntry model with a bunch of if-else statements. Maybe I should look into making it a switch for optimization but it works for now so I'm leaving it as is
 	async void SaveBtnClicked(object sender, EventArgs e)
 	{
 		if (string.IsNullOrWhiteSpace(model.courseName))
@@ -29,6 +30,7 @@ public partial class CourseEntryDetails : ContentPage
 			return;
 		} else
 		{
+			HapticFeedback.Default.Perform(HapticFeedbackType.Click); // add vibration for emphasis
 			CourseEntryViewModel.Current.SaveCourse(model);
 		}
 		await Navigation.PopAsync();

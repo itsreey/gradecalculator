@@ -36,9 +36,17 @@ public partial class CourseListPage : ContentPage
         Calculator calc = new Calculator(courseList); // create a new calculator object to calculate
 
         HapticFeedback.Default.Perform(HapticFeedbackType.Click); // add haptic feedback for the results showing, for emphasis
-        DisplayAlert("Result", "Your GPA is " + calc.GetResult() + ".", "Done"); // the results display as a pop-up
 
-        //TODO: add special exception phrase when theres no courses yet. currently it says "Your GPA is NaN"
+        double result = calc.GetResult();
+
+        // if nothing in course list, say so. Else, display as a pop-up.
+        if (Double.IsNaN(result) == true)
+        {
+            DisplayAlert("Nothing to Calculate", "There are no courses entered yet.", "Okay");
+        } else
+        {
+            DisplayAlert("Result", "Your GPA is " + result + ".", "Done");
+        }
 
     }
 
