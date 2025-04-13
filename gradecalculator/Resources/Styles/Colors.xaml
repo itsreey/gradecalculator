@@ -13,7 +13,7 @@
     <Color x:Key="SecondaryDarkText">#e2ceff</Color>
     <Color x:Key="Tertiary">#2B0B98</Color>
 
-    <Color x:Key="White">White</Color>
+    <Color x:Key="White">#f5f5f5</Color>
     <Color x:Key="Black">#45475a</Color>
     <Color x:Key="Magenta">#D600AA</Color>
     <Color x:Key="MidnightBlue">#190649</Color>

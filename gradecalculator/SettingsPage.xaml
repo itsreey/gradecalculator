@@ -3,10 +3,127 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gradecalculator.SettingsPage"
              Title="Settings">
-    <VerticalStackLayout>
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="RadioButtonTemplate">
+            <Border Stroke="#F3F2F1"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10"
+                    BackgroundColor="{AppThemeBinding Light=#4c4f69, Dark=#F3F2F1}"
+                    HeightRequest="90"
+                    WidthRequest="90"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <Setter Property="Stroke"
+                                            Value="#FF3300" />
+                                    <Setter TargetName="check"
+                                            Property="Opacity"
+                                            Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                            Value="{AppThemeBinding Light=#4c4f69, Dark=#F3F2F1}" />
+                                    <Setter Property="Stroke"
+                                            Value="#F3F2F1" />
+                                    <Setter TargetName="check"
+                                            Property="Opacity"
+                                            Value="0" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+                <Grid Margin="4"
+                      WidthRequest="80">
+                    <Grid Margin="0,0,4,0"
+                          WidthRequest="18"
+                          HeightRequest="18"
+                          HorizontalOptions="End"
+                          VerticalOptions="Start">
+                        <Ellipse Stroke="Blue"
+                                 Fill="White"
+                                 WidthRequest="16"
+                                 HeightRequest="16"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center" />
+                        <Ellipse x:Name="check"
+                                 Fill="Blue"
+                                 WidthRequest="8"
+                                 HeightRequest="8"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center" />
+                    </Grid>
+                    <ContentPresenter />
+                </Grid>
+            </Border>
+        </ControlTemplate>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource RadioButtonTemplate}" />
+        </Style>
+    </ContentPage.Resources>
+    
+    <VerticalStackLayout Margin="20">
         <Label 
-            Text="I want to put a theme toggle here so the user can switch from light to dark mode without changing the system theme"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="Change Theme"
+            FontSize="Header"
+            FontAttributes="Bold"/>
+        <Label Text="Choose between following system theme, using light mode, or dark mode." />
+        <StackLayout
+            Margin="10"
+            Orientation="Horizontal">
+            <RadioButton
+                Value="System"
+                CheckedChanged="RadioButton_CheckedChanged">
+                <RadioButton.Content>
+                    <StackLayout>
+                        <Image Source="{AppThemeBinding Light=systemlight.png, Dark=systemdark.png}"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                        <Label Text="System Theme"
+                               FontSize="Small"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End" />
+                    </StackLayout>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton
+                Value="Light"
+                CheckedChanged="RadioButton_CheckedChanged">
+                <RadioButton.Content>
+                    <StackLayout>
+                        <Image Source="{AppThemeBinding Light=sunlight.png, Dark=sundark.png}"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                        <Label Text="Light Mode"
+                               FontSize="Small"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End" />
+                    </StackLayout>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton
+                Value="Dark"
+                CheckedChanged="RadioButton_CheckedChanged">
+                <RadioButton.Content>
+                    <StackLayout>
+                        <Image Source="{AppThemeBinding Light=moonlight.png, Dark=moondark.png}"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                        <Label Text="Dark Mode"
+                               FontSize="Small"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End" />
+                    </StackLayout>
+                </RadioButton.Content>
+            </RadioButton>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
