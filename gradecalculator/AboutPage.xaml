@@ -9,7 +9,7 @@
                    SemanticProperties.Description="The GPA Calculator app logo"
                    HeightRequest="64" />
             <Label FontSize="22" FontAttributes="Bold" Text="GPA Calculator" VerticalOptions="End" />
-            <Label FontSize="22" Text="v1.0" VerticalOptions="End" />
+            <Label FontSize="22" Text="v1.1" VerticalOptions="End" />
         </HorizontalStackLayout>
 
         <Label Text="This GPA Calculator is meant for UON students' convenience. :)" />

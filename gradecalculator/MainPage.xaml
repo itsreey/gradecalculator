@@ -25,6 +25,12 @@
                 HorizontalOptions="Fill"
                 Clicked="StartBtnClicked" />
 
+            <Button
+                x:Name="HelpBtn"
+                Text="How to Use"
+                HorizontalOptions="Fill"
+                Clicked="HelpBtn_Clicked" />
+
         </VerticalStackLayout>
     </ScrollView>
 
